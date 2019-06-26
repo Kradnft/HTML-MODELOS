@@ -1,0 +1,30 @@
+body {
+color: white;
+font-family : verdana;
+font-size : 24px;
+text-align : center;
+}
+body {
+background-image: url(http://www.hdfondos.eu/preview/get_photo/56881/1920/1200)
+}
+h1 {
+    color: black;
+    font-family : arial;
+
+}
+input[type=submit] {
+    padding:12px 45px; 
+    background:white;
+    font-size: 70%;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+

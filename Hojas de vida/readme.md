@@ -1,5 +1,5 @@
 ### Ejercicios Modelos II 
-HTML BASIC -
+HTML CON ESTILOS
 
 
 ## Santiago Gómez Almeyda 20161020503

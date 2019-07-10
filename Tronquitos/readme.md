@@ -1,5 +1,5 @@
 ### Ejercicios Modelos II 
-EJERCICIO DE LA GALLINA
+JUEGO PROPUESTO
 
 
 ## Santiago Gómez Almeyda 20161020503

@@ -9,11 +9,8 @@
   	<title>Proyecto</title>
 </head>
 <body>
-<div class="centrar">
-    <input type="button" value="INICIO" onclick="iniciarJuego()" />	
-    <input type="button" value="REINICIAR" onclick="resetearJuego()" />	
-  </div>
-	  <div id="juego">
+
+	  <div id="tablero">
 		  <table>
         <tr>
           <td id="0" class="letra" onclick="girarCarta()" data-valor="valor">?</td>
@@ -41,7 +38,10 @@
         </tr>
     		</table>
 	  </div>
-  
+  <div class="centrar">
+    <input type="button" value="INICIO" onclick="iniciarJuego()" />	
+    <input type="button" value="REINICIAR" onclick="resetearJuego()" />	
+  </div>
 </body>
   <script type="text/javascript" src="script.js"></script>
 </html>

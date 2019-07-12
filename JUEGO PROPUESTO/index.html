@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	  <div id="tablero">
+	  <div id="tablero" class ="tablero">
 		  <table>
         <tr>
           <td id="0" class="letra" onclick="girarCarta()" data-valor="valor">?</td>
@@ -36,6 +36,14 @@
           <td id="14" class="letra" onclick="girarCarta()" data-valor="valor">?</td>
           <td id="15" class="letra" onclick="girarCarta()" data-valor="valor">?</td>
         </tr>
+	 <tr>
+		<td colspan ="2">
+			Intentos:
+		</td>
+		<td colspan="2" id="try" data-valor="0">
+			0
+		</td>
+	 </tr>
     		</table>
 	  </div>
   <div class="centrar">

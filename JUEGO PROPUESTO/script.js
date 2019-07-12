@@ -15,10 +15,11 @@ var jugada1 = "";
 var jugada2 = "";
 var identificadorJ1 = "";
 var identificadorJ2 = "";
-var Ntablero = document.getElementById("tablero");
+
+
+
 //Funcion que se activa al oprimir iniciar juego
 function iniciarJuego () {	
-
 //Creamos la variable dato que recibe del HTML el elemento de Tablero.
 var dato = document.getElementById("tablero");
 //De damos un opaco fuerte para que se vea
@@ -34,12 +35,14 @@ for ( var i = 0 ; i < 16 ; i++ ) {
 };
 //
 function resetearJuego () {
+   intentos=0;
+  document.getElementById("try").innerHTML = intentos;
   cartas.sort(function() {return Math.random() - 0.5});
   for ( var i = 0 ; i < 16 ; i++ ) {
     var carta = cartas[i].nombre;
     var dato = document.getElementById( i.toString() );
     dato.dataset.valor = carta;
-    colorCambio( i, 'black', '?');
+    colorCambio( i, 'yellow', '?');
 
   }	
 }
@@ -54,6 +57,7 @@ function girarCarta () {
 //Si las cartas son iguales pero no es la misma carta es decir tienen el mismo valor pero no es la misma posicion
 //Este caso es en el que el usuario acierta
     if ( jugada1 === jugada2 && identificadorJ1 !== identificadorJ2 && cartas[parseInt(identificadorJ2)].seleccion != true &&               cartas[parseInt(identificadorJ1)].seleccion != true) {
+
       //Ponemos la selccion se las cartas en verdadero
       cartas[parseInt(identificadorJ1)].seleccion = true;
       cartas[parseInt(identificadorJ2)].seleccion = true;
@@ -63,21 +67,27 @@ function girarCarta () {
       colorCambio(identificadorJ1, "green",  "☑");
 //Vaciamos los valores de la jugada
       vaciar();
+	intentos= intentos + 1;
+
+  document.getElementById("try").innerHTML = intentos;
+
 //Miramos si ya se acabo el juego
       comprobar();
-	intentos= intentos + 1;
     }
 
 
 //Caso en el que se seleccionen las 2 pero este equivocado 
     else if(identificadorJ1 !== identificadorJ2){
       var self = this;
+//Se da un tiempo para que el usuario alcance a memorizar los numeros que eligio 
       setTimeout(function(){
         colorCambio(self.identificadorJ1, "red", "x")
         colorCambio(self.identificadorJ2, "red", "x")
-        vaciar()
+        vaciar();
 	intentos=intentos+1;
-      },200); 
+  document.getElementById("try").innerHTML = intentos;
+
+      },250); 
 
       colorCambio(identificadorJ2, "blue", jugada2);
     }
@@ -110,6 +120,7 @@ function colorCambio (posicion, color, contenido) {
 //Se comprueba si ya se acertaron todas las 16 cartas ya han sido seleccionadas
 function comprobar () {
   var aciertos = 0;
+
   for( var i = 0 ; i < 16 ; i++ ){
     if ( cartas[i].seleccion == true ) {
       aciertos ++;
@@ -117,7 +128,8 @@ function comprobar () {
   }
 //Si ya se seleccionan todas las cartas entonces se toma el tablero y se cambia por un mensjae de ganaste
   if(aciertos == 16){
-    document.getElementById("tablero").innerHTML = "Ganaste con un total de " + intentos + " intentos";
+     tab=document.getElementById("tablero");
+    tab.innerHTML = "Ganaste con un total de " + intentos + " intentos";
   }
 }
 
